@@ -1,0 +1,2817 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>pro-iq | Analyse. Grow. Achieve.</title>
+
+<style>
+:root {
+    --navy: #08122c;
+    --navy-light: #101e42;
+    --purple: #6657ff;
+    --blue: #3488ff;
+    --text: #101c3a;
+    --muted: #64748b;
+    --white: #ffffff;
+    --light: #f5f7ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    color: var(--text);
+    background: white;
+    line-height: 1.6;
+}
+
+button, input {
+    font: inherit;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #8b82ff, #39b8ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: 0;
+    border-radius: 30px;
+    padding: 12px 23px;
+    font-weight: 650;
+    transition: .25s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(110deg, #6657ff, #4d69ff);
+    color: white;
+    box-shadow: 0 8px 22px #6657ff40;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px #6657ff60;
+}
+
+.btn-outline {
+    color: white;
+    border: 1px solid #ffffff70;
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: #ffffff15;
+}
+
+section {
+    padding: 85px 0;
+}
+
+.section-label {
+    color: var(--purple);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.section-heading {
+    font-size: clamp(30px, 4vw, 43px);
+    line-height: 1.2;
+    letter-spacing: -1.4px;
+    margin-bottom: 16px;
+}
+
+.section-description {
+    color: var(--muted);
+    max-width: 600px;
+}
+
+/* NAVIGATION */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #08122cf5;
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid #ffffff12;
+}
+
+.nav-inner {
+    width: min(1200px, 92%);
+    margin: auto;
+    height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    font-size: 29px;
+    font-weight: 850;
+    letter-spacing: -1.5px;
+    color: white;
+    white-space: nowrap;
+}
+
+.logo-icon {
+    color: #7e7aff;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 29px;
+}
+
+.nav-links a {
+    color: #d6dcef;
+    font-size: 14px;
+    transition: color .2s;
+}
+
+.nav-links a:hover {
+    color: #8e8aff;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-actions .btn {
+    padding: 9px 19px;
+    font-size: 13px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    color: white;
+    border: 1px solid #ffffff35;
+    border-radius: 8px;
+    padding: 8px 12px;
+}
+
+/* HERO */
+
+.hero {
+    color: white;
+    background:
+        radial-gradient(ellipse at 70% 40%, #4239a8a0, transparent 42%),
+        radial-gradient(ellipse at 95% 100%, #1259a955, transparent 35%),
+        linear-gradient(135deg, #09132f, #101b48 65%, #161747);
+    overflow: hidden;
+    position: relative;
+    padding: 92px 0 100px;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    border: 1px solid #ffffff0c;
+    right: 8%;
+    top: 8%;
+    box-shadow: 0 0 0 45px #ffffff05, 0 0 0 90px #ffffff04;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-kicker {
+    color: #a7adff;
+    font-weight: 750;
+    letter-spacing: 3px;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 6vw, 76px);
+    line-height: 1.02;
+    letter-spacing: -3.5px;
+    margin-bottom: 24px;
+}
+
+.hero h2 {
+    font-size: clamp(21px, 3vw, 28px);
+    line-height: 1.35;
+    margin-bottom: 18px;
+}
+
+.hero-description {
+    color: #c6cee5;
+    font-size: 16px;
+    max-width: 530px;
+    line-height: 1.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 29px;
+}
+
+.trust-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 32px;
+    color: #dce3f7;
+    font-size: 13px;
+}
+
+.avatar-stack {
+    display: flex;
+}
+
+.avatar-stack span {
+    width: 33px;
+    height: 33px;
+    display: grid;
+    place-items: center;
+    margin-left: -6px;
+    border: 2px solid #17254d;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #b4b9ff, #49b8db);
+    font-size: 15px;
+}
+
+.avatar-stack span:first-child {
+    margin-left: 0;
+}
+
+/* HERO VISUAL */
+
+.hero-art {
+    min-height: 390px;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.art-glow {
+    width: 280px;
+    height: 280px;
+    position: absolute;
+    border-radius: 50%;
+    background: #685cff38;
+    filter: blur(45px);
+}
+
+.analysing-card {
+    width: min(100%, 340px);
+    position: relative;
+    padding: 27px;
+    background: linear-gradient(145deg, #ffffff19, #ffffff08);
+    border: 1px solid #ffffff28;
+    border-radius: 25px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 25px 65px #0003;
+    transform: rotate(-2deg);
+}
+
+.analysing-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 27px;
+    color: #dbe5ff;
+    font-size: 13px;
+}
+
+.online-dot {
+    width: 8px;
+    height: 8px;
+    background: #47e2ae;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.progress-circle {
+    width: 115px;
+    height: 115px;
+    margin: 10px auto 23px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: conic-gradient(#8b80ff 0 76%, #ffffff17 76% 100%);
+    position: relative;
+}
+
+.progress-circle::before {
+    content: "";
+    position: absolute;
+    width: 91px;
+    height: 91px;
+    background: #151b48;
+    border-radius: 50%;
+}
+
+.progress-circle span {
+    z-index: 1;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.analysing-card h3 {
+    text-align: center;
+    font-size: 19px;
+}
+
+.analysing-card > p {
+    color: #b9c5e8;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.mini-courses {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 11px;
+    margin-top: 23px;
+}
+
+.mini-course {
+    background: #ffffff0d;
+    border: 1px solid #ffffff14;
+    border-radius: 12px;
+    padding: 13px;
+    font-size: 12px;
+}
+
+.mini-course span {
+    display: block;
+    font-size: 21px;
+    margin-bottom: 5px;
+}
+
+.float-badge {
+    position: absolute;
+    z-index: 2;
+    padding: 13px 16px;
+    border-radius: 14px;
+    background: #ffffff;
+    color: #142044;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 12px 35px #0003;
+    animation: float 4s ease-in-out infinite;
+}
+
+.badge-one {
+    top: 36px;
+    right: -5px;
+}
+
+.badge-two {
+    bottom: 40px;
+    left: -5px;
+    animation-delay: -2s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* STATS */
+
+.stats {
+    padding: 30px 0;
+    background: #f4f5ff;
+    border-bottom: 1px solid #e6e9ff;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stat {
+    text-align: center;
+    padding: 14px;
+    border-right: 1px solid #dce1f6;
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.stat strong {
+    display: block;
+    color: #4d53ec;
+    font-size: 31px;
+    line-height: 1.4;
+}
+
+.stat span {
+    color: #64748b;
+    font-size: 13px;
+}
+
+/* FEATURES */
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 42px;
+}
+
+.feature-card {
+    padding: 29px;
+    border: 1px solid #e9eaf5;
+    border-radius: 18px;
+    background: white;
+    transition: transform .25s, box-shadow .25s;
+}
+
+.feature-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 45px #26305f12;
+}
+
+.feature-icon {
+    width: 53px;
+    height: 53px;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #eceaff, #e5f2ff);
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    margin-bottom: 9px;
+    font-size: 18px;
+}
+
+.feature-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* ABOUT */
+
+.about {
+    background: #f6f7ff;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.about-visual {
+    min-height: 350px;
+    border-radius: 25px;
+    background:
+        radial-gradient(circle at 70% 30%, #a3a0ff, transparent 32%),
+        linear-gradient(145deg, #d9e6ff, #e8e4ff 60%, #cceeff);
+    display: grid;
+    place-items: center;
+    padding: 30px;
+    overflow: hidden;
+}
+
+.about-dashboard {
+    background: white;
+    border: 1px solid #ffffff;
+    width: 100%;
+    max-width: 380px;
+    padding: 23px;
+    border-radius: 17px;
+    box-shadow: 0 20px 55px #394d9130;
+    transform: rotate(2deg);
+}
+
+.about-dashboard h3 {
+    margin-bottom: 6px;
+}
+
+.about-dashboard p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.skill-row {
+    margin-top: 20px;
+}
+
+.skill-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+.skill-track {
+    height: 8px;
+    border-radius: 20px;
+    background: #e8eaff;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #6657ff, #40b9ff);
+}
+
+.about-points {
+    display: grid;
+    gap: 19px;
+    margin-top: 27px;
+}
+
+.about-point {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.check {
+    min-width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    background: #e6e6ff;
+    color: #5d4df5;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.about-point p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+/* COURSES */
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.course-card {
+    overflow: hidden;
+    border-radius: 17px;
+    border: 1px solid #e8eaf4;
+    background: white;
+    transition: transform .25s, box-shadow .25s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 35px #101b3a12;
+}
+
+.course-art {
+    min-height: 155px;
+    display: grid;
+    place-items: center;
+    font-size: 61px;
+}
+
+.course-art.one {
+    background: linear-gradient(135deg, #e0e7ff, #b8d8ff);
+}
+
+.course-art.two {
+    background: linear-gradient(135deg, #e7dcff, #c9b9ff);
+}
+
+.course-art.three {
+    background: linear-gradient(135deg, #d3f9ee, #b7e5fa);
+}
+
+.course-content {
+    padding: 22px;
+}
+
+.course-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 750;
+    color: #6251ee;
+    background: #eeedff;
+    padding: 5px 9px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.course-content h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.course-content p {
+    color: var(--muted);
+    font-size: 13px;
+    min-height: 45px;
+}
+
+.course-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 19px;
+    font-size: 13px;
+}
+
+.course-bottom button {
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+/* TESTIMONIALS */
+
+.testimonials {
+    background: #f5f6ff;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.review-card {
+    background: white;
+    border: 1px solid #e8eafa;
+    border-radius: 17px;
+    padding: 25px;
+}
+
+.review-stars {
+    color: #f6a623;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+}
+
+.review-card > p {
+    font-size: 14px;
+    color: #526079;
+    line-height: 1.8;
+}
+
+.reviewer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.reviewer-icon {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #dedbff, #bce6ff);
+    font-size: 22px;
+}
+
+.reviewer strong {
+    display: block;
+    font-size: 13px;
+}
+
+.reviewer span {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* CTA */
+
+.cta {
+    padding: 75px 0;
+    background: linear-gradient(120deg, #111a47, #4435a3);
+    color: white;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: clamp(30px, 4vw, 43px);
+    margin-bottom: 14px;
+}
+
+.cta p {
+    color: #d0d6f3;
+    max-width: 600px;
+    margin: 0 auto 27px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #08122c;
+    color: white;
+    padding: 55px 0 22px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr .8fr .8fr 1.2fr;
+    gap: 35px;
+}
+
+.footer-brand p {
+    color: #aab6d3;
+    font-size: 13px;
+    margin-top: 13px;
+    max-width: 240px;
+}
+
+.footer-column h3 {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.footer-column a {
+    display: block;
+    color: #aab6d3;
+    font-size: 13px;
+    margin: 9px 0;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+.newsletter {
+    display: flex;
+    margin-top: 15px;
+    gap: 5px;
+}
+
+.newsletter input {
+    width: 100%;
+    min-width: 0;
+    padding: 11px;
+    border-radius: 8px;
+    border: 1px solid #ffffff25;
+    background: #ffffff0d;
+    color: white;
+}
+
+.newsletter button {
+    padding: 10px 13px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+#newsletterMessage {
+    color: #a9b8ff;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.copyright {
+    border-top: 1px solid #ffffff15;
+    text-align: center;
+    color: #8f9ab8;
+    font-size: 12px;
+    margin-top: 40px;
+    padding-top: 22px;
+}
+
+/* AUTHENTICATION MODAL */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+    background: #050b1ddd;
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.auth-box {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    padding: 32px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 25px 90px #0005;
+    animation: modalIn .25s ease;
+    margin: auto;
+}
+
+@keyframes modalIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-modal {
+    position: absolute;
+    top: 13px;
+    right: 16px;
+    border: 0;
+    background: #f0f1f8;
+    color: #374151;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    font-size: 21px;
+}
+
+.auth-logo {
+    text-align: center;
+    color: #111c40;
+    font-size: 27px;
+    font-weight: 850;
+    margin-bottom: 7px;
+}
+
+.auth-subtitle {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 23px;
+}
+
+.auth-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    padding: 5px;
+    border-radius: 10px;
+    background: #f1f3fa;
+    margin-bottom: 24px;
+}
+
+.auth-tabs button {
+    border: none;
+    background: transparent;
+    padding: 10px;
+    border-radius: 7px;
+    color: #64748b;
+    font-weight: 650;
+}
+
+.auth-tabs button.active {
+    background: white;
+    color: #5749ed;
+    box-shadow: 0 2px 8px #0000000c;
+}
+
+.auth-box h2 {
+    font-size: 23px;
+    margin-bottom: 6px;
+}
+
+.auth-box .form-description {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.auth-box label {
+    display: block;
+    font-size: 13px;
+    font-weight: 650;
+    margin-top: 14px;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 12px 13px;
+    margin-top: 6px;
+    border: 1px solid #d8deea;
+    border-radius: 9px;
+    outline: none;
+    background: white;
+}
+
+.auth-box input:focus {
+    border-color: #6657ff;
+    box-shadow: 0 0 0 3px #6657ff17;
+}
+
+.auth-submit {
+    width: 100%;
+    margin-top: 22px;
+    border-radius: 9px;
+}
+
+.auth-message {
+    margin-top: 14px;
+    font-size: 13px;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.auth-switch {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 18px;
+    color: var(--muted);
+}
+
+.auth-switch a {
+    color: #5b4df0;
+    font-weight: 700;
+}
+
+/* LOGGED-IN WELCOME PANEL */
+
+.member-panel {
+    min-height: 100vh;
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f6f7ff, #e9efff);
+}
+
+.member-card {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 45px;
+    text-align: center;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px #26305f13;
+}
+
+.member-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.member-card h1 {
+    font-size: clamp(30px, 5vw, 45px);
+    margin-bottom: 12px;
+}
+
+.member-card p {
+    color: var(--muted);
+    margin-bottom: 22px;
+}
+
+.member-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.btn-dark {
+    background: var(--navy);
+    color: white;
+}
+
+@media (max-width: 900px) {
+    .nav-links {
+        gap: 16px;
+    }
+
+    .hero-grid {
+        gap: 25px;
+    }
+
+    .features-grid,
+    .courses-grid,
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .badge-one {
+        right: -5px;
+    }
+}
+
+@media (max-width: 680px) {
+    .nav-inner {
+        height: 67px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 67px;
+        left: 0;
+        right: 0;
+        padding: 20px 5%;
+        background: #08122c;
+        border-top: 1px solid #ffffff18;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 12px 0;
+    }
+
+    .nav-actions {
+        gap: 6px;
+    }
+
+    .nav-actions .btn {
+        padding: 8px 11px;
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 65px 0;
+    }
+
+    .hero-grid,
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .hero-art {
+        min-height: 350px;
+    }
+
+    .badge-one {
+        right: 0;
+    }
+
+    .badge-two {
+        left: 0;
+    }
+
+    section {
+        padding: 65px 0;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat:nth-child(2) {
+        border-right: none;
+    }
+
+    .stat:nth-child(1),
+    .stat:nth-child(2) {
+        border-bottom: 1px solid #dce1f6;
+    }
+
+    .features-grid,
+    .courses-grid,
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        padding: 24px;
+    }
+
+    .about-visual {
+        min-height: 300px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 20px;
+    }
+
+    .member-card {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 390px) {
+    .nav-actions .btn {
+        padding: 7px 9px;
+        font-size: 11px;
+    }
+
+    .hero-buttons .btn {
+        padding: 11px 16px;
+    }
+
+    .auth-box {
+        padding: 26px 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* PRO-IQ modern motion layer */
+:root { scroll-behavior: smooth; }
+body { overflow-x: hidden; }
+::selection { background: #7c5cff; color: #fff; }
+.scroll-progress {
+  position: fixed; inset: 0 auto auto 0; height: 4px; width: 0%;
+  background: linear-gradient(90deg, #6d5dfc, #00d4ff, #ff5ec4);
+  z-index: 9999; box-shadow: 0 0 14px rgba(109,93,252,.65);
+}
+.navbar { transition: background .3s ease, box-shadow .3s ease, padding .3s ease, backdrop-filter .3s ease; }
+.navbar.scrolled {
+  background: rgba(10, 12, 30, .88) !important;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 10px 35px rgba(0,0,0,.18);
+}
+.hero { isolation: isolate; }
+.hero::before { animation: heroGlow 9s ease-in-out infinite alternate; }
+.hero-kicker { animation: fadeSlideUp .8s .05s both; }
+.hero h1 { animation: fadeSlideUp .9s .14s both; }
+.hero h2 { animation: fadeSlideUp .9s .23s both; }
+.hero-description { animation: fadeSlideUp .9s .32s both; }
+.hero-buttons { animation: fadeSlideUp .9s .4s both; }
+.hero-art { animation: floatIn 1s .2s both, gentleFloat 6s 1.2s ease-in-out infinite; }
+.btn, .feature-card, .course-card, .review-card, .stat-card, .about-card {
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease, filter .28s ease;
+}
+.btn:hover { transform: translateY(-4px) scale(1.025); filter: brightness(1.08); }
+.feature-card:hover, .course-card:hover, .review-card:hover, .stat-card:hover, .about-card:hover {
+  transform: translateY(-9px);
+  box-shadow: 0 22px 55px rgba(67, 56, 202, .16);
+}
+section { scroll-margin-top: 90px; }
+.reveal-ready .reveal {
+  opacity: 0; transform: translateY(28px) scale(.985);
+  transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);
+}
+.reveal-ready .reveal.is-visible { opacity: 1; transform: translateY(0) scale(1); }
+.reveal-ready .reveal[data-reveal="left"] { transform: translateX(-32px); }
+.reveal-ready .reveal[data-reveal="right"] { transform: translateX(32px); }
+.reveal-ready .reveal[data-reveal="left"].is-visible,
+.reveal-ready .reveal[data-reveal="right"].is-visible { transform: translateX(0); }
+.motion-marquee {
+  overflow: hidden; width: 100%; padding: 15px 0; margin: 10px 0 0;
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+.motion-marquee-track {
+  display: flex; width: max-content; gap: 16px;
+  animation: marqueeRoll 28s linear infinite;
+}
+.motion-marquee:hover .motion-marquee-track { animation-play-state: paused; }
+.motion-chip {
+  display: inline-flex; align-items: center; gap: 9px; white-space: nowrap;
+  padding: 11px 18px; border-radius: 999px;
+  border: 1px solid rgba(130,130,255,.24);
+  background: rgba(120,110,255,.07); color: inherit; font-size: .9rem;
+}
+.motion-chip span { color: #8b7bff; font-weight: 800; }
+#backToTop {
+  position: fixed; right: 22px; bottom: 22px; z-index: 1000;
+  width: 46px; height: 46px; border: 1px solid rgba(255,255,255,.18);
+  border-radius: 50%; color: white; cursor: pointer;
+  background: linear-gradient(135deg, #715cff, #4b3bd1);
+  box-shadow: 0 10px 28px rgba(87,67,230,.35);
+  opacity: 0; visibility: hidden; transform: translateY(12px);
+  transition: .25s ease; font-size: 20px;
+}
+#backToTop.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+#backToTop:hover { transform: translateY(-4px); }
+@keyframes fadeSlideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes floatIn { from { opacity: 0; transform: translateY(24px) scale(.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes gentleFloat { 0%,100% { translate: 0 0; } 50% { translate: 0 -10px; } }
+@keyframes heroGlow { from { opacity: .55; transform: translate3d(-1%,0,0) scale(.98); } to { opacity: 1; transform: translate3d(1%,1%,0) scale(1.04); } }
+@keyframes marqueeRoll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+  .reveal-ready .reveal { opacity: 1; transform: none; }
+}
+
+
+/* HR ADMIN DASHBOARD — added without replacing the existing page styles */
+.hr-dashboard {
+    min-height: calc(100vh - 74px);
+    padding: 42px 0 70px;
+    background: #f5f7ff;
+}
+.hr-dashboard .hr-topbar {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 18px; flex-wrap: wrap; margin-bottom: 28px;
+}
+.hr-dashboard .hr-eyebrow {
+    color: #6657ff; font-size: 12px; font-weight: 800; letter-spacing: 2px;
+}
+.hr-dashboard h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.2; margin: 5px 0 8px; }
+.hr-dashboard .hr-subtitle { color: #64748b; }
+.hr-dashboard .hr-toolbar { display: flex; gap: 10px; flex-wrap: wrap; }
+.hr-dashboard .hr-stats {
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px; margin-bottom: 24px;
+}
+.hr-dashboard .hr-stat, .hr-dashboard .hr-panel {
+    background: white; border: 1px solid #e7eaf5; border-radius: 16px;
+    box-shadow: 0 8px 25px #26305f08;
+}
+.hr-dashboard .hr-stat { padding: 22px; }
+.hr-dashboard .hr-stat span { color: #64748b; font-size: 13px; display: block; }
+.hr-dashboard .hr-stat strong { display: block; font-size: 30px; margin-top: 8px; color: #101c3a; }
+.hr-dashboard .hr-stat small { color: #64748b; font-size: 12px; }
+.hr-dashboard .hr-panel { padding: 24px; margin-bottom: 22px; }
+.hr-dashboard .hr-panel-head {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 14px; flex-wrap: wrap; margin-bottom: 18px;
+}
+.hr-dashboard .hr-panel h2 { font-size: 19px; }
+.hr-dashboard .hr-muted { color: #64748b; font-size: 13px; }
+.hr-dashboard .hr-controls { display: flex; gap: 10px; flex-wrap: wrap; }
+.hr-dashboard .hr-controls input, .hr-dashboard .hr-controls select,
+.hr-dashboard .hr-form input, .hr-dashboard .hr-form select {
+    min-width: 0; padding: 11px 12px; border: 1px solid #dbe1ef;
+    border-radius: 9px; background: white; color: #101c3a; outline: none;
+}
+.hr-dashboard .hr-controls input:focus, .hr-dashboard .hr-controls select:focus,
+.hr-dashboard .hr-form input:focus, .hr-dashboard .hr-form select:focus {
+    border-color: #6657ff; box-shadow: 0 0 0 3px #6657ff17;
+}
+.hr-dashboard .hr-form {
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px; align-items: end;
+}
+.hr-dashboard .hr-form label { display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; }
+.hr-dashboard .hr-form input, .hr-dashboard .hr-form select { width: 100%; }
+.hr-dashboard .hr-form .hr-form-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.hr-dashboard .hr-table-wrap { overflow-x: auto; }
+.hr-dashboard table { width: 100%; border-collapse: collapse; min-width: 720px; }
+.hr-dashboard th, .hr-dashboard td {
+    text-align: left; padding: 13px 12px; border-bottom: 1px solid #edf0f7;
+    font-size: 13px; white-space: nowrap;
+}
+.hr-dashboard th { color: #64748b; font-size: 11px; text-transform: uppercase; letter-spacing: .7px; }
+.hr-dashboard .hr-person { display: flex; align-items: center; gap: 10px; }
+.hr-dashboard .hr-avatar {
+    width: 36px; height: 36px; display: grid; place-items: center; border-radius: 11px;
+    color: #5546e8; background: linear-gradient(135deg, #eceaff, #dff2ff); font-weight: 800;
+}
+.hr-dashboard .hr-status {
+    display: inline-block; padding: 5px 9px; border-radius: 30px;
+    font-size: 11px; font-weight: 750;
+}
+.hr-dashboard .hr-status.active { background: #dcfce7; color: #166534; }
+.hr-dashboard .hr-status.leave { background: #fef3c7; color: #92400e; }
+.hr-dashboard .hr-status.inactive { background: #fee2e2; color: #991b1b; }
+.hr-dashboard .hr-row-actions { display: flex; gap: 7px; }
+.hr-dashboard .hr-small-btn {
+    border: 1px solid #dfe3f0; background: white; color: #394568;
+    border-radius: 7px; padding: 6px 9px; font-size: 12px; cursor: pointer;
+}
+.hr-dashboard .hr-small-btn:hover { border-color: #6657ff; color: #5546e8; }
+.hr-dashboard .hr-small-btn.delete:hover { border-color: #ef4444; color: #dc2626; }
+.hr-dashboard .hr-empty { padding: 28px; text-align: center; color: #64748b; }
+.hr-dashboard .hr-message { color: #218838; font-size: 13px; margin-top: 12px; min-height: 18px; }
+.hr-dashboard .hr-note { color: #64748b; font-size: 12px; margin-top: 16px; }
+#hrDashboardButton { white-space: nowrap; }
+@media (max-width: 900px) {
+    .hr-dashboard .hr-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .hr-dashboard .hr-form { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 580px) {
+    .hr-dashboard { padding-top: 28px; }
+    .hr-dashboard .hr-stats { gap: 10px; }
+    .hr-dashboard .hr-stat { padding: 15px; }
+    .hr-dashboard .hr-stat strong { font-size: 25px; }
+    .hr-dashboard .hr-panel { padding: 16px; }
+    .hr-dashboard .hr-form { grid-template-columns: 1fr; }
+    #hrDashboardButton { padding: 8px 10px !important; font-size: 11px !important; }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+
+<!-- NAVIGATION -->
+
+<nav class="navbar" id="top">
+    <div class="nav-inner">
+        <a class="logo" href="#home" aria-label="pro-iq home">
+            <span class="logo-icon">✿</span> pro-<span class="gradient-text">iq</span>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <a href="#courses">Courses</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+            <button class="btn btn-outline" id="hrDashboardButton" type="button">HR Dashboard</button>
+            <button class="btn btn-outline" data-auth="login">Login</button>
+            <button class="btn btn-primary" data-auth="register">Register</button>
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        </div>
+    </div>
+</nav>
+
+<!-- LANDING PAGE -->
+
+<div id="landingPage">
+
+    <section class="hero" id="home">
+        <div class="container hero-grid">
+            <div>
+                <p class="hero-kicker">WELCOME TO THE FUTURE</p>
+                <h1>Analyse smarter.<br>Grow <span class="gradient-text">faster.</span></h1>
+                <h2>Smarter Analysing. Brighter Future.</h2>
+
+                <p class="hero-description">
+                    pro-iq is a modern analysing platform designed to help
+                    you analyse new skills, discover your potential and
+                    achieve your goals with confidence.
+                </p>
+
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" data-auth="register">
+                        Get Started <span>→</span>
+                    </button>
+                    <a class="btn btn-outline" href="#features">Explore Features</a>
+                </div>
+
+                <div class="trust-row">
+                    <div class="avatar-stack">
+                        <span>👨🏻</span>
+                        <span>👩🏻</span>
+                        <span>👨🏽</span>
+                        <span>👩🏽</span>
+                    </div>
+                    <span>Built for curious minds and lifelong analysers</span>
+                </div>
+            </div>
+
+            <div class="hero-art">
+                <div class="art-glow"></div>
+
+                <div class="float-badge badge-one">✨ Keep analysing</div>
+                <div class="float-badge badge-two">🚀 Your next level starts here</div>
+
+                <div class="analysing-card">
+                    <div class="analysing-top">
+                        <span>✿ pro-iq analysing space</span>
+                        <span><i class="online-dot"></i> Ready to grow</span>
+                    </div>
+
+                    <div class="progress-circle">
+                        <span>76%</span>
+                    </div>
+
+                    <h3>Your growth journey</h3>
+                    <p>Small steps. Extraordinary progress.</p>
+
+                    <div class="mini-courses">
+                        <div class="mini-course">
+                            <span>💻</span>
+                            Web Development
+                        </div><a href="index.html"></a>
+                        <div class="mini-course">
+                            <span>🧠</span>
+                            AI & Technology
+                        </div>
+                        <div class="mini-course">
+                            <span>🎨</span>
+                            Creative Design
+                        </div>
+                        <div class="mini-course">
+                            <span>📈</span>
+                            Career Growth
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="motion-marquee" aria-label="Pro-IQ learning highlights">
+      <div class="motion-marquee-track">
+        <span class="motion-chip"><span>✦</span> Think smarter</span>
+        <span class="motion-chip"><span>↗</span> Analyse progress</span>
+        <span class="motion-chip"><span>◎</span> Build real skills</span>
+        <span class="motion-chip"><span>✧</span> Create your future</span>
+        <span class="motion-chip"><span>⚡</span> Make every step count</span>
+        <span class="motion-chip"><span>✦</span> Think smarter</span>
+        <span class="motion-chip"><span>↗</span> Analyse progress</span>
+        <span class="motion-chip"><span>◎</span> Build real skills</span>
+        <span class="motion-chip"><span>✧</span> Create your future</span>
+        <span class="motion-chip"><span>⚡</span> Make every step count</span>
+      </div>
+    </div>
+
+
+    <!-- STATS -->
+
+    <div class="stats">
+        <div class="container stats-grid">
+            <div class="stat">
+                <strong>01</strong>
+                <span>Your first step</span>
+            </div>
+            <div class="stat">
+                <strong>24/7</strong>
+                <span>Analyse at your pace</span>
+            </div>
+            <div class="stat">
+                <strong>∞</strong>
+                <span>Room to grow</span>
+            </div>
+            <div class="stat">
+                <strong>100%</strong>
+                <span>Focus on your goals</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- FEATURES -->
+
+    <section id="features">
+        <div class="container">
+            <p class="section-label">WHY PRO-IQ</p>
+            <h2 class="section-heading">Everything you need<br>to move forward.</h2>
+            <p class="section-description">
+                A simple, modern experience to support your analysing,
+                creativity and professional development.
+            </p>
+
+            <div class="features-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Personalized Analysing</h3>
+                    <p>Explore analysing paths that match your interests,
+                    goals and the skills you want to build.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Analyse at Your Pace</h3>
+                    <p>Build a consistent analysing routine and move
+                    forward at a speed that works for you.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Track Your Progress</h3>
+                    <p>Keep your goals in sight and celebrate every
+                    milestone along your analysing journey.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3>Practical Skills</h3>
+                    <p>Discover technology, development and creative
+                    skills that you can practise through projects.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Analyse Anywhere</h3>
+                    <p>Use the responsive website on your desktop,
+                    tablet or mobile browser.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Goal Focused</h3>
+                    <p>Turn big ambitions into smaller actions that
+                    help you build confidence and momentum.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+        <div class="container about-grid">
+            <div class="about-visual">
+                <div class="about-dashboard">
+                    <p>YOUR PERSONAL SPACE</p>
+                    <h3>Keep moving forward ✨</h3>
+                    <p>Example analysing progress</p>
+
+                    <div class="skill-row">
+                        <div class="skill-label">
+                            <span>Web Development</span><strong>80%</strong>
+                        </div>
+                        <div class="skill-track">
+                            <div class="skill-fill" style="width:80%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-row">
+                        <div class="skill-label">
+                            <span>Problem Solving</span><strong>65%</strong>
+                        </div>
+                        <div class="skill-track">
+                            <div class="skill-fill" style="width:65%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-row">
+                        <div class="skill-label">
+                            <span>Creative Thinking</span><strong>90%</strong>
+                        </div>
+                        <div class="skill-track">
+                            <div class="skill-fill" style="width:90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <p class="section-label">ABOUT PRO-IQ</p>
+                <h2 class="section-heading">Your ambition deserves a better platform.</h2>
+                <p class="section-description">
+                    We believe analysing should feel accessible, motivating
+                    and connected to real goals. pro-iq brings your analysing
+                    journey into one clear, welcoming experience.
+                </p>
+
+                <div class="about-points">
+                    <div class="about-point">
+                        <span class="check">✓</span>
+                        <div>
+                            <strong>A clear analysing experience</strong>
+                            <p>Spend less time finding your way and more
+                            time focusing on what matters.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-point">
+                        <span class="check">✓</span>
+                        <div>
+                            <strong>Progress that motivates</strong>
+                            <p>Break your ambitions into achievable
+                            steps and keep building momentum.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-point">
+                        <span class="check">✓</span>
+                        <div>
+                            <strong>Skills for tomorrow</strong>
+                            <p>Explore modern technology and practical
+                            ideas for your personal growth.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" style="margin-top:28px"
+                        data-auth="register">Start Your Journey →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- COURSES -->
+
+    <section id="courses">
+        <div class="container">
+            <p class="section-label">EXPLORE YOUR POTENTIAL</p>
+            <h2 class="section-heading">Discover what you can create.</h2>
+            <p class="section-description">
+                Explore these example analysing categories and choose
+                a direction that inspires you.
+            </p>
+
+            <div class="courses-grid">
+                <article class="course-card">
+                    <div class="course-art one">💻</div>
+                    <div class="course-content">
+                        <span class="course-tag">ACCOUNTBLITY</span>
+                        <h3>who caused it, and why?</h3>
+                        <p>Trace the Cost, stop the Lost</p>
+                        <div class="course-bottom">
+                            <strong>Beginner friendly</strong>
+                            <button class="btn btn-primary"
+                                    data-auth="register">Explore</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-card">
+                    <div class="course-art two">🤖</div>
+                    <div class="course-content">
+                        <span class="course-tag">LOSS PREVENTION</span>
+                        <h3>How do we stop the lose before it grows</h3>
+                        <p>Spot waste,control cost,and prevent losses before they grow</p>
+                        <div class="course-bottom">
+                            <strong>Analyse the basics</strong>
+                            <button class="btn btn-primary"
+                                    data-auth="register">Explore</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-card">
+                    <div class="course-art three">🎨</div>
+                    <div class="course-content">
+                        <span class="course-tag">VISIBILITY</span>
+                        <h3>Show hidden cloud expenses</h3>
+                        <p>forecast Future cloud bills</p>
+                        <div class="course-bottom">
+                            <strong>Build your skills</strong>
+                            <button class="btn btn-primary"
+                                    data-auth="register">Explore</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+
+    <section class="testimonials">
+        <div class="container">
+            <p class="section-label">YOUR NEXT CHAPTER</p>
+            <h2 class="section-heading">Growth starts with one step.</h2>
+            <p class="section-description">
+                Make space for curiosity, build useful habits and
+                keep analysing something new.
+            </p>
+
+            <div class="reviews-grid">
+                <article class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p>“A good analysing experience starts with a clear
+                    goal and the motivation to keep practising.”</p>
+                    <div class="reviewer">
+                        <div class="reviewer-icon">👩🏻</div>
+                        <div>
+                            <strong>Pooja</strong>
+                            <span>Analysing enthusiast</span>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="reviews-grid">
+                <article class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p>“A good analysing experience starts with a clear
+                    goal and the motivation to keep practising.”</p>
+                    <div class="reviewer">
+                        <div class="reviewer-icon">👩🏻</div>
+                        <div>
+                            <strong>Sangeeta</strong>
+                            <span>Analysing enthusiast</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p>“Building small projects helped me understand
+                    new concepts and become more confident.”</p>
+                    <div class="reviewer">
+                        <div class="reviewer-icon">👨🏽</div>
+                        <div>
+                            <strong>Pramod k</strong>
+                            <span>Aspiring developer</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p>“Consistency matters. Every new skill is another
+                    opportunity to discover what you can do.”</p>
+                    <div class="reviewer">
+                        <div class="reviewer-icon">👩🏽</div>
+                        <div>
+                            <strong>Sneha</strong>
+                            <span>Creative learner</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <p style="font-size:12px;color:#64748b;margin-top:18px">
+                Illustrative sample testimonials for the website design.
+            </p>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to become your <span class="gradient-text">best self?</span></h2>
+            <p>
+                Start with one goal, take one step and discover
+                where your analysing journey can lead.
+            </p>
+            <button class="btn btn-primary" data-auth="register">
+                Create Your Account →
+            </button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a class="logo" href="#home">✿ pro-<span class="gradient-text">iq</span></a>
+                    <p>Analyse today. Lead tomorrow. Make every step count.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <a href="#home">Home</a>
+                    <a href="#features">Features</a>
+                    <a href="#about">About Us</a>
+                    <a href="#courses">Analysing Categories</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Get Started</h3>
+                    <a href="#" data-auth="login">Login</a>
+                    <a href="#" data-auth="register">Create Account</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Stay in the loop</h3>
+                    <p style="color:#aab6d3;font-size:13px">
+                        Subscribe for updates and analysing inspiration.
+                    </p>
+                    <form class="newsletter" id="newsletterForm">
+                        <input type="email" id="newsletterEmail"
+                               placeholder="Your email address" required>
+                        <button class="btn btn-primary" type="submit">
+                            Join
+                        </button>
+                    </form>
+                    <p id="newsletterMessage" aria-live="polite"></p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                © <span id="year"></span> pro-iq. All rights reserved.
+                <br>Designed for curious minds.
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<!-- LOGGED-IN SCREEN -->
+
+<section class="member-panel hidden" id="memberPage">
+    <div class="container">
+        <div class="member-card">
+            <div class="member-icon">🎉</div>
+            <p class="section-label">WELCOME TO PRO-IQ</p>
+            <h1>Hello, <span id="memberName" class="gradient-text">Learner</span>!</h1>
+            <p>
+                You have successfully logged in. Your analysing journey
+                starts here. Explore the website and choose your next goal.
+            </p>
+
+            <div class="features-grid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-top:25px">
+                <div class="feature-card">
+                    <div class="feature-icon" style="margin:auto auto 12px">💻</div>
+                    <strong>Development</strong>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="margin:auto auto 12px">🤖</div>
+                    <strong>AI & Technology</strong>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="margin:auto auto 12px">🎨</div>
+                    <strong>Creative Design</strong>
+                </div>
+            </div>
+
+            <div class="member-actions">
+                <button class="btn btn-primary" id="exploreButton">
+                    Explore Website →
+                </button>
+                <button class="btn btn-dark" id="logoutButton">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- HR ADMIN DASHBOARD: new section; original landing and member sections remain unchanged -->
+<section class="hr-dashboard hidden" id="hrDashboard">
+    <div class="container">
+        <div class="hr-topbar">
+            <div>
+                <p class="hr-eyebrow">PEOPLE OPERATIONS</p>
+                <h1>HR Admin Dashboard</h1>
+                <p class="hr-subtitle">Manage employee records and review your team at a glance.</p>
+            </div>
+            <div class="hr-toolbar">
+                <button class="btn btn-outline" id="hrBackButton" style="color:#101c3a;border-color:#cbd3e5">← Back to Website</button>
+                <button class="btn btn-primary" id="hrExportButton">Export CSV ↓</button>
+            </div>
+        </div>
+
+        <div class="hr-stats">
+            <article class="hr-stat"><span>Total Employees</span><strong id="hrTotal">0</strong><small>Employee records</small></article>
+            <article class="hr-stat"><span>Active Employees</span><strong id="hrActive">0</strong><small>Currently active</small></article>
+            <article class="hr-stat"><span>On Leave</span><strong id="hrLeave">0</strong><small>Marked as on leave</small></article>
+            <article class="hr-stat"><span>Departments</span><strong id="hrDepartments">0</strong><small>Unique departments</small></article>
+        </div>
+
+        <div class="hr-panel">
+            <div class="hr-panel-head">
+                <div>
+                    <h2 id="hrFormTitle">Add Employee</h2>
+                    <p class="hr-muted">Company Number includes the employee ID and company phone number. Add the employee work email and optional team email to match transactions. Changes are saved in this browser.</p>
+                </div>
+            </div>
+            <form class="hr-form" id="hrEmployeeForm">
+                <div>
+                    <label for="hrEmployeeName">Full name</label>
+                    <input id="hrEmployeeName" type="text" placeholder="e.g. Asha Patil" required maxlength="80">
+                </div>
+                <div>
+                    <label for="hrEmployeeId">Company Number — Employee ID</label>
+                    <input id="hrEmployeeId" type="text" placeholder="e.g. PRO-IQ-1006" required maxlength="40">
+                </div>
+                <div>
+                    <label for="hrCompanyPhone">Company Number — Phone Number</label>
+                    <input id="hrCompanyPhone" type="tel" placeholder="e.g. +91 9876543210" required maxlength="25">
+                </div>
+                <div>
+                    <label for="hrEmployeeEmail">Employee Work Email</label>
+                    <input id="hrEmployeeEmail" type="email" placeholder="name@company.com" required maxlength="120">
+                </div>
+                <div>
+                    <label for="hrEmployeeTeamEmail">Team email ID (optional)</label>
+                    <input id="hrEmployeeTeamEmail" type="email" placeholder="e.g. engineering@company.com" maxlength="120">
+                </div>
+                <div>
+                    <label for="hrEmployeeDepartment">Department</label>
+                    <input id="hrEmployeeDepartment" type="text" placeholder="e.g. Engineering" required maxlength="80">
+                </div>
+                <div>
+                    <label for="hrEmployeeRole">Job title</label>
+                    <input id="hrEmployeeRole" type="text" placeholder="e.g. Analyst" required maxlength="80">
+                </div>
+                <div>
+                    <label for="hrEmployeeStatus">Employment status</label>
+                    <select id="hrEmployeeStatus">
+                        <option value="Active">Active</option>
+                        <option value="On Leave">On Leave</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="hrEmployeeJoined">Joining date</label>
+                    <input id="hrEmployeeJoined" type="date" required>
+                </div>
+                <div class="hr-form-actions">
+                    <button class="btn btn-primary" type="submit" id="hrSaveButton">Add Employee</button>
+                    <button class="btn btn-outline" style="color:#101c3a;border:1px solid #dbe1ef" type="button" id="hrCancelEditButton">Clear</button>
+                </div>
+            </form>
+            <p class="hr-message" id="hrMessage" aria-live="polite"></p>
+        </div>
+
+        <div class="hr-panel">
+            <div class="hr-panel-head">
+                <div>
+                    <h2>Employee Directory</h2>
+                    <p class="hr-muted">Search, edit, or remove employee records.</p>
+                </div>
+                <div class="hr-controls">
+                    <input type="search" id="hrSearch" placeholder="Search name, employee ID, phone, employee/team email..." aria-label="Search employees">
+                    <select id="hrDepartmentFilter" aria-label="Filter by department">
+                        <option value="">All departments</option>
+                    </select>
+                    <select id="hrStatusFilter" aria-label="Filter by status">
+                        <option value="">All statuses</option>
+                        <option value="Active">Active</option>
+                        <option value="On Leave">On Leave</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                </div>
+            </div>
+            <div class="hr-table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Employee</th><th>Employee ID</th><th>Company Phone</th><th>Employee Email</th><th>Team Email</th><th>Department</th><th>Job Title</th><th>Status</th><th>Joining Date</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody id="hrEmployeeRows"></tbody>
+                </table>
+                <div class="hr-empty hidden" id="hrEmptyState">No employees match your search.</div>
+            </div>
+            <p class="hr-note">Demo dashboard: employee data is stored locally in this browser only. It is not connected to a company HR system or server.</p>
+        </div>
+
+        <div class="hr-panel" id="hrTransactionsPanel">
+            <div class="hr-panel-head">
+                <div>
+                    <h2>Employee &amp; Team Transactions</h2>
+                    <p class="hr-muted">Import a transaction CSV. Rows are matched to employees by employee email or team email.</p>
+                </div>
+                <div class="hr-controls">
+                    <label class="btn btn-primary" for="hrTransactionFile" style="cursor:pointer">Import Transactions CSV ↑</label>
+                    <input id="hrTransactionFile" type="file" accept=".csv,text/csv" style="display:none">
+                    <button class="btn btn-outline" id="hrClearTransactions" type="button" style="color:#101c3a;border:1px solid #dbe1ef">Clear Transactions</button>
+                </div>
+            </div>
+            <p class="hr-muted">CSV columns required: <strong>email</strong> (or employee_email/team_email) and <strong>amount</strong> (or cost). Optional: date, description/service, transaction_id. Email must match the employee email or their team email.</p>
+            <div class="hr-stats" style="margin-top:18px">
+                <article class="hr-stat"><span>Matched Transactions</span><strong id="hrTxnCount">0</strong><small>Rows linked to employees</small></article>
+                <article class="hr-stat"><span>Total Spend</span><strong id="hrTxnTotal">₹0.00</strong><small>Matched transactions only</small></article>
+                <article class="hr-stat"><span>Highest Transaction</span><strong id="hrTxnHighest">—</strong><small id="hrTxnHighestLabel">No transaction data</small></article>
+                <article class="hr-stat"><span>Lowest Transaction</span><strong id="hrTxnLowest">—</strong><small id="hrTxnLowestLabel">No transaction data</small></article>
+            </div>
+            <div class="hr-table-wrap">
+                <table style="min-width:800px">
+                    <thead><tr><th>Date</th><th>Employee / Team</th><th>Email ID</th><th>Description</th><th>Amount</th></tr></thead>
+                    <tbody id="hrTransactionRows"></tbody>
+                </table>
+                <div class="hr-empty" id="hrTransactionEmpty">No transactions imported yet. Upload a transaction CSV to view matching employee/team transactions.</div>
+            </div>
+            <p class="hr-message" id="hrTransactionMessage" aria-live="polite"></p>
+            <p class="hr-note">Important: this front-end demo cannot automatically access email accounts or payment/cloud billing systems. For live transactions, connect a secure backend or the billing provider API. Imported data is saved only in this browser.</p>
+        </div>
+    </div>
+</section>
+
+<!-- LOGIN / REGISTER MODAL -->
+
+<div class="modal hidden" id="authModal"
+     role="dialog" aria-modal="true" aria-labelledby="authHeading">
+    <div class="auth-box">
+        <button class="close-modal" id="closeModal"
+                aria-label="Close login dialog">×</button>
+
+        <div class="auth-logo">✿ pro-<span class="gradient-text">iq</span></div>
+        <p class="auth-subtitle">Your next chapter begins here.</p>
+
+        <div class="auth-tabs">
+            <button type="button" id="loginTab" class="active">Login</button>
+            <button type="button" id="registerTab">Register</button>
+        </div>
+
+        <form id="loginForm">
+            <h2 id="authHeading">Welcome back</h2>
+            <p class="form-description">Log in to continue your journey.</p>
+
+            <label for="loginEmail">Email address</label>
+            <input type="email" id="loginEmail" placeholder="you@example.com"
+                   autocomplete="email" required>
+
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" placeholder="Enter your password"
+                   autocomplete="current-password" required>
+
+            <button class="btn btn-primary auth-submit" type="submit">
+                Login to pro-iq →
+            </button>
+
+            <p class="auth-switch">
+                Don't have an account?
+                <a href="#" id="switchToRegister">Register</a>
+            </p>
+        </form>
+
+        <form id="registerForm" class="hidden">
+            <h2 id="registerHeading">Create your account</h2>
+            <p class="form-description">Start your analysing journey today.</p>
+
+            <label for="registerName">Full name</label>
+            <input type="text" id="registerName" placeholder="Your full name"
+                   autocomplete="name" required>
+
+            <label for="registerEmail">Email address</label>
+            <input type="email" id="registerEmail" placeholder="you@example.com"
+                   autocomplete="email" required>
+
+            <label for="registerPassword">Create password</label>
+            <input type="password" id="registerPassword"
+                   placeholder="At least 6 characters"
+                   autocomplete="new-password" minlength="6" required>
+
+            <label for="confirmPassword">Confirm password</label>
+            <input type="password" id="confirmPassword"
+                   placeholder="Enter your password again"
+                   autocomplete="new-password" minlength="6" required>
+
+            <button class="btn btn-primary auth-submit" type="submit">
+                Create Account →
+            </button>
+
+            <p class="auth-switch">
+                Already registered?
+                <a href="#" id="switchToLogin">Login</a>
+            </p>
+        </form>
+
+        <p class="auth-message" id="authMessage"
+           role="status" aria-live="polite"></p>
+    </div>
+</div>
+
+<script>
+/* NAVIGATION */
+
+const navLinks = document.getElementById("navLinks");
+const menuToggle = document.getElementById("menuToggle");
+
+menuToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+    });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* AUTHENTICATION UI */
+
+const modal = document.getElementById("authModal");
+const landingPage = document.getElementById("landingPage");
+const memberPage = document.getElementById("memberPage");
+
+const loginForm = document.getElementById("loginForm");
+const registerForm = document.getElementById("registerForm");
+const loginTab = document.getElementById("loginTab");
+const registerTab = document.getElementById("registerTab");
+const authMessage = document.getElementById("authMessage");
+
+let lastFocusedElement = null;
+
+function showAuthMessage(text, color = "#218838") {
+    authMessage.textContent = text;
+    authMessage.style.color = color;
+}
+
+function openAuth(mode = "login") {
+    lastFocusedElement = document.activeElement;
+    modal.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+    setAuthMode(mode);
+
+    const focusTarget = mode === "register"
+        ? document.getElementById("registerName")
+        : document.getElementById("loginEmail");
+
+    setTimeout(() => focusTarget.focus(), 50);
+}
+
+function closeAuth() {
+    modal.classList.add("hidden");
+    document.body.style.overflow = "";
+    authMessage.textContent = "";
+
+    if (lastFocusedElement) lastFocusedElement.focus();
+}
+
+function setAuthMode(mode) {
+    const isRegister = mode === "register";
+
+    loginForm.classList.toggle("hidden", isRegister);
+    registerForm.classList.toggle("hidden", !isRegister);
+
+    loginTab.classList.toggle("active", !isRegister);
+    registerTab.classList.toggle("active", isRegister);
+
+    showAuthMessage("");
+}
+
+document.querySelectorAll("[data-auth]").forEach(button => {
+    button.addEventListener("click", event => {
+        event.preventDefault();
+        openAuth(button.dataset.auth);
+    });
+});
+
+document.getElementById("closeModal").addEventListener("click", closeAuth);
+loginTab.addEventListener("click", () => setAuthMode("login"));
+registerTab.addEventListener("click", () => setAuthMode("register"));
+
+document.getElementById("switchToRegister").addEventListener("click", event => {
+    event.preventDefault();
+    setAuthMode("register");
+});
+
+document.getElementById("switchToLogin").addEventListener("click", event => {
+    event.preventDefault();
+    setAuthMode("login");
+});
+
+modal.addEventListener("click", event => {
+    if (event.target === modal) closeAuth();
+});
+
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && !modal.classList.contains("hidden")) {
+        closeAuth();
+    }
+});
+
+/* DEMO REGISTRATION AND LOGIN
+   Browser storage is for demonstration only, not real authentication. */
+
+function getUsers() {
+    const saved = localStorage.getItem("proIqDemoUsers");
+    const users = saved ? JSON.parse(saved) : {};
+    if (!users || typeof users !== "object" || Array.isArray(users)) {
+        throw new Error("Invalid saved account data.");
+    }
+    return users;
+}
+
+function saveUsers(users) {
+    localStorage.setItem("proIqDemoUsers", JSON.stringify(users));
+}
+
+function enterMemberArea(name) {
+    sessionStorage.setItem("proIqDemoLoggedIn", "true");
+    sessionStorage.setItem("proIqDemoName", name);
+    sessionStorage.setItem("proIqDemoRole", "user");
+    document.getElementById("memberName").textContent = name;
+    landingPage.classList.add("hidden");
+    memberPage.classList.remove("hidden");
+    closeAuth();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function enterAdminArea() {
+    sessionStorage.setItem("proIqDemoLoggedIn", "true");
+    sessionStorage.setItem("proIqDemoName", "Administrator");
+    sessionStorage.setItem("proIqDemoRole", "admin");
+    loginForm.reset();
+    closeAuth();
+    // The HR dashboard listens for this event and verifies the admin role again.
+    document.dispatchEvent(new CustomEvent("proIqAdminLogin"));
+}
+
+loginForm.addEventListener("submit", event => {
+    event.preventDefault();
+    showAuthMessage("");
+    const email = document.getElementById("loginEmail").value.trim().toLowerCase();
+    const password = document.getElementById("loginPassword").value;
+
+    // Demo administrator account. For a real deployment, validate roles on a server.
+    if (email === "admin@pro-iq.com" && password === "Admin@123") {
+        enterAdminArea();
+        return;
+    }
+
+    try {
+        const user = getUsers()[email];
+        if (!user || user.password !== password) {
+            showAuthMessage("Incorrect email or password.", "#dc2626");
+            return;
+        }
+        loginForm.reset();
+        enterMemberArea(user.name || "Learner");
+    } catch (error) {
+        showAuthMessage("Unable to read saved demo accounts. Please try again.", "#dc2626");
+    }
+});
+
+registerForm.addEventListener("submit", event => {
+    event.preventDefault();
+    showAuthMessage("");
+    const name = document.getElementById("registerName").value.trim();
+    const email = document.getElementById("registerEmail").value.trim().toLowerCase();
+    const password = document.getElementById("registerPassword").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (!name) {
+        showAuthMessage("Please enter your full name.", "#dc2626");
+        return;
+    }
+    if (password.length < 6) {
+        showAuthMessage("Password must contain at least 6 characters.", "#dc2626");
+        return;
+    }
+    if (password !== confirmPassword) {
+        showAuthMessage("Passwords do not match.", "#dc2626");
+        return;
+    }
+
+    try {
+        const users = getUsers();
+        if (users[email]) {
+            showAuthMessage("This email is already registered. Please log in.", "#dc2626");
+            return;
+        }
+        // Demo only: do not store real passwords this way in production.
+        users[email] = { name, password };
+        saveUsers(users);
+        registerForm.reset();
+        document.getElementById("loginEmail").value = email;
+        setAuthMode("login");
+        showAuthMessage("Account created! You can now log in.", "#218838");
+    } catch (error) {
+        showAuthMessage("Unable to save your account in this browser.", "#dc2626");
+    }
+});
+
+/* MEMBER AREA */
+document.getElementById("logoutButton").addEventListener("click", () => {
+    sessionStorage.removeItem("proIqDemoLoggedIn");
+    sessionStorage.removeItem("proIqDemoName");
+    sessionStorage.removeItem("proIqDemoRole");
+    memberPage.classList.add("hidden");
+    landingPage.classList.remove("hidden");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+document.getElementById("exploreButton").addEventListener("click", () => {
+    // Open the CloudWise dashboard (keep both HTML files in the same folder).
+    window.location.href = "who-caused-it.html";
+});
+
+/* NEWSLETTER DEMO */
+document.getElementById("newsletterForm").addEventListener("submit", event => {
+    event.preventDefault();
+    document.getElementById("newsletterMessage").textContent =
+        "Thanks for your interest! Newsletter delivery needs a backend connection.";
+    event.target.reset();
+});
+
+/* RESTORE DEMO SESSION */
+if (sessionStorage.getItem("proIqDemoLoggedIn") === "true" &&
+    sessionStorage.getItem("proIqDemoName")) {
+    document.getElementById("memberName").textContent =
+        sessionStorage.getItem("proIqDemoName");
+    landingPage.classList.add("hidden");
+    memberPage.classList.remove("hidden");
+}
+</script>
+
+<button id="backToTop" type="button" aria-label="Back to top" title="Back to top">↑</button>
+
+<script>
+(() => {
+  const progress = document.getElementById('scrollProgress');
+  const nav = document.querySelector('.navbar');
+  const topButton = document.getElementById('backToTop');
+
+  const updateScrollUI = () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const percent = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+    if (progress) progress.style.width = percent + '%';
+    if (nav) nav.classList.toggle('scrolled', window.scrollY > 24);
+    if (topButton) topButton.classList.toggle('visible', window.scrollY > 420);
+  };
+  window.addEventListener('scroll', updateScrollUI, { passive: true });
+  updateScrollUI();
+
+  if (topButton) topButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Reveal page sections as they enter the viewport.
+  const sections = document.querySelectorAll('section, .feature-card, .course-card, .review-card, .stat-card, .about-card');
+  sections.forEach((el, index) => {
+    if (el.closest('.hero')) return;
+    el.classList.add('reveal');
+    if (index % 7 === 1) el.dataset.reveal = 'left';
+    if (index % 7 === 4) el.dataset.reveal = 'right';
+    if (el.matches('.feature-card, .course-card, .review-card, .stat-card, .about-card')) {
+      el.style.transitionDelay = (index % 4) * 70 + 'ms';
+    }
+  });
+  document.body.classList.add('reveal-ready');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  }
+
+  // Subtle pointer tilt on larger screens only.
+  if (window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.feature-card, .course-card, .review-card').forEach(card => {
+      card.addEventListener('pointermove', event => {
+        const rect = card.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `translateY(-7px) perspective(800px) rotateX(${-y * 3}deg) rotateY(${x * 3}deg)`;
+      });
+      card.addEventListener('pointerleave', () => { card.style.transform = ''; });
+    });
+  }
+})();
+</script>
+
+
+<script>
+/* HR ADMIN DASHBOARD — independent addition */
+(() => {
+    const dashboard = document.getElementById("hrDashboard");
+    const landing = document.getElementById("landingPage");
+    const member = document.getElementById("memberPage");
+    const modal = document.getElementById("authModal");
+    const openButton = document.getElementById("hrDashboardButton");
+    const backButton = document.getElementById("hrBackButton");
+    const form = document.getElementById("hrEmployeeForm");
+    const rows = document.getElementById("hrEmployeeRows");
+    const search = document.getElementById("hrSearch");
+    const departmentFilter = document.getElementById("hrDepartmentFilter");
+    const statusFilter = document.getElementById("hrStatusFilter");
+    const message = document.getElementById("hrMessage");
+    const saveButton = document.getElementById("hrSaveButton");
+    const formTitle = document.getElementById("hrFormTitle");
+    const storageKey = "proIqHrEmployees";
+    const transactionStorageKey = "proIqHrTransactions";
+    const transactionRows = document.getElementById("hrTransactionRows");
+    const transactionFile = document.getElementById("hrTransactionFile");
+    let transactions = readTransactions();
+    let editingId = null;
+
+    const today = new Date();
+    const localToday = `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,"0")}-${String(today.getDate()).padStart(2,"0")}`;
+    document.getElementById("hrEmployeeJoined").value = localToday;
+
+    const starterEmployees = [
+        { id: "hr-1001", employeeId: "PRO-IQ-1001", companyPhone: "+91 9000001001", name: "Asha Patil", email: "asha.patil@example.com", teamEmail: "engineering@example.com", department: "Engineering", role: "Software Developer", status: "Active", joined: "2025-04-14" },
+        { id: "hr-1002", employeeId: "PRO-IQ-1002", companyPhone: "+91 9000001002", name: "Rahul Sharma", email: "rahul.sharma@example.com", teamEmail: "hr@example.com", department: "Human Resources", role: "HR Executive", status: "Active", joined: "2024-11-03" },
+        { id: "hr-1003", employeeId: "PRO-IQ-1003", companyPhone: "+91 9000001003", name: "Sneha Rao", email: "sneha.rao@example.com", teamEmail: "finance@example.com", department: "Finance", role: "Finance Analyst", status: "On Leave", joined: "2025-01-20" },
+        { id: "hr-1004", employeeId: "PRO-IQ-1004", companyPhone: "+91 9000001004", name: "Kiran Kumar", email: "kiran.kumar@example.com", teamEmail: "design@example.com", department: "Design", role: "UI/UX Designer", status: "Active", joined: "2025-07-08" },
+        { id: "hr-1005", employeeId: "PRO-IQ-1005", companyPhone: "+91 9000001005", name: "Meera Joshi", email: "meera.joshi@example.com", department: "Engineering", role: "QA Engineer", status: "Inactive", joined: "2023-09-18" }
+    ];
+
+    function readEmployees() {
+        try {
+            const saved = localStorage.getItem(storageKey);
+            if (!saved) return starterEmployees.slice();
+            const parsed = JSON.parse(saved);
+            return Array.isArray(parsed) ? parsed : starterEmployees.slice();
+        } catch (error) {
+            return starterEmployees.slice();
+        }
+    }
+
+    let employees = readEmployees();
+    employees = employees.map((e, i) => ({ ...e, employeeId: e.employeeId || `PRO-IQ-${String(i + 1001).padStart(4, "0")}`, companyPhone: e.companyPhone || "", teamEmail: e.teamEmail || "" }));
+
+    function readTransactions() {
+        try {
+            const saved = localStorage.getItem("proIqHrTransactions");
+            const parsed = saved ? JSON.parse(saved) : [];
+            return Array.isArray(parsed) ? parsed : [];
+        } catch (error) { return []; }
+    }
+
+    function persistTransactions() {
+        try {
+            localStorage.setItem(transactionStorageKey, JSON.stringify(transactions));
+            return true;
+        } catch (error) {
+            document.getElementById("hrTransactionMessage").textContent = "Could not save transactions in this browser. The import may exceed browser storage limits.";
+            return false;
+        }
+    }
+
+    function persistEmployees() {
+        try {
+            localStorage.setItem(storageKey, JSON.stringify(employees));
+            return true;
+        } catch (error) {
+            showMessage("Could not save data in this browser. Check browser storage settings.", true);
+            return false;
+        }
+    }
+
+    function showMessage(text, isError = false) {
+        message.textContent = text;
+        message.style.color = isError ? "#dc2626" : "#218838";
+    }
+
+    function isAdmin() {
+        return sessionStorage.getItem("proIqDemoLoggedIn") === "true" &&
+               sessionStorage.getItem("proIqDemoRole") === "admin";
+    }
+
+    function showDashboard() {
+        // Role check is enforced here too, not just by hiding the navigation button.
+        if (!isAdmin()) {
+            dashboard.classList.add("hidden");
+            if (modal) {
+                modal.classList.remove("hidden");
+                document.body.style.overflow = "hidden";
+                document.getElementById("loginEmail").value = "";
+                document.getElementById("loginPassword").value = "";
+                document.getElementById("loginEmail").focus();
+                document.getElementById("authMessage").textContent = "Administrator login required to access the HR Dashboard.";
+                document.getElementById("authMessage").style.color = "#dc2626";
+            }
+            return;
+        }
+        landing.classList.add("hidden");
+        member.classList.add("hidden");
+        dashboard.classList.remove("hidden");
+        if (modal) modal.classList.add("hidden");
+        document.body.style.overflow = "";
+        openButton.textContent = "Website Home";
+        render();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function hideDashboard() {
+        dashboard.classList.add("hidden");
+        if (isAdmin()) {
+            landing.classList.remove("hidden");
+            member.classList.add("hidden");
+        } else if (sessionStorage.getItem("proIqDemoLoggedIn") === "true") {
+            member.classList.remove("hidden");
+            landing.classList.add("hidden");
+        } else {
+            landing.classList.remove("hidden");
+            member.classList.add("hidden");
+        }
+        openButton.textContent = "HR Dashboard";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    openButton.addEventListener("click", () => {
+        if (!dashboard.classList.contains("hidden")) {
+            hideDashboard();
+        } else if (isAdmin()) {
+            showDashboard();
+        } else {
+            if (modal) {
+                modal.classList.remove("hidden");
+                document.body.style.overflow = "hidden";
+                document.getElementById("loginEmail").value = "";
+                document.getElementById("loginPassword").value = "";
+                if (typeof setAuthMode === "function") setAuthMode("login");
+                document.getElementById("authMessage").textContent = "Administrator login required. Sign in with the admin account.";
+                document.getElementById("authMessage").style.color = "#dc2626";
+                document.getElementById("loginEmail").focus();
+            }
+        }
+    });
+    backButton.addEventListener("click", hideDashboard);
+    document.addEventListener("proIqAdminLogin", () => showDashboard());
+
+    // Restore the admin-only dashboard after a page refresh in the same tab.
+    if (isAdmin()) showDashboard();
+
+    function statusClass(status) {
+        if (status === "Active") return "active";
+        if (status === "On Leave") return "leave";
+        return "inactive";
+    }
+
+    function escapeHTML(value) {
+        return String(value ?? "").replace(/[&<>"']/g, char => ({
+            "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+        }[char]));
+    }
+
+    function renderDepartmentFilter() {
+        const current = departmentFilter.value;
+        const departments = [...new Set(employees.map(e => e.department).filter(Boolean))].sort((a,b) => a.localeCompare(b));
+        departmentFilter.innerHTML = '<option value="">All departments</option>' +
+            departments.map(d => `<option value="${escapeHTML(d)}">${escapeHTML(d)}</option>`).join("");
+        if (departments.includes(current)) departmentFilter.value = current;
+    }
+
+    function renderStats() {
+        document.getElementById("hrTotal").textContent = employees.length;
+        document.getElementById("hrActive").textContent = employees.filter(e => e.status === "Active").length;
+        document.getElementById("hrLeave").textContent = employees.filter(e => e.status === "On Leave").length;
+        document.getElementById("hrDepartments").textContent = new Set(employees.map(e => e.department.trim().toLowerCase()).filter(Boolean)).size;
+    }
+
+    function render() {
+        renderStats();
+        renderDepartmentFilter();
+        const term = search.value.trim().toLowerCase();
+        const dept = departmentFilter.value;
+        const status = statusFilter.value;
+        const filtered = employees.filter(e => {
+            const text = `${e.name} ${e.employeeId || ""} ${e.companyPhone || ""} ${e.email} ${e.teamEmail || ""} ${e.department} ${e.role}`.toLowerCase();
+            return text.includes(term) && (!dept || e.department === dept) && (!status || e.status === status);
+        });
+
+        rows.innerHTML = filtered.map(e => `
+            <tr>
+                <td><div class="hr-person"><span class="hr-avatar">${escapeHTML((e.name || "?").split(/\s+/).map(p => p[0] || "").join("").slice(0,2).toUpperCase())}</span>
+                    <span><strong>${escapeHTML(e.name)}</strong></span></div></td>
+                <td>${escapeHTML(e.employeeId || "—")}</td>
+                <td>${escapeHTML(e.companyPhone || "—")}</td>
+                <td>${escapeHTML(e.email || "—")}</td>
+                <td>${escapeHTML(e.teamEmail || "—")}</td>
+                <td>${escapeHTML(e.department || "—")}</td>
+                <td>${escapeHTML(e.role || "—")}</td>
+                <td><span class="hr-status ${statusClass(e.status)}">${escapeHTML(e.status)}</span></td>
+                <td>${escapeHTML(e.joined || "—")}</td>
+                <td><div class="hr-row-actions">
+                    <button class="hr-small-btn" type="button" data-edit="${escapeHTML(e.id)}">Edit</button>
+                    <button class="hr-small-btn delete" type="button" data-delete="${escapeHTML(e.id)}">Delete</button>
+                </div></td>
+            </tr>`).join("");
+        document.getElementById("hrEmptyState").classList.toggle("hidden", filtered.length > 0);
+        if (typeof renderTransactions === "function") renderTransactions();
+    }
+
+    function clearForm() {
+        editingId = null;
+        form.reset();
+        document.getElementById("hrEmployeeJoined").value = localToday;
+        formTitle.textContent = "Add Employee";
+        saveButton.textContent = "Add Employee";
+        showMessage("");
+    }
+
+    form.addEventListener("submit", event => {
+        event.preventDefault();
+        const name = document.getElementById("hrEmployeeName").value.trim();
+        const employeeId = document.getElementById("hrEmployeeId").value.trim().toUpperCase();
+        const companyPhone = document.getElementById("hrCompanyPhone").value.trim();
+        const email = document.getElementById("hrEmployeeEmail").value.trim().toLowerCase();
+        const teamEmail = document.getElementById("hrEmployeeTeamEmail").value.trim().toLowerCase();
+        const department = document.getElementById("hrEmployeeDepartment").value.trim();
+        const role = document.getElementById("hrEmployeeRole").value.trim();
+        const status = document.getElementById("hrEmployeeStatus").value;
+        const joined = document.getElementById("hrEmployeeJoined").value;
+
+        if (!name || !employeeId || !companyPhone || !email || !department || !role || !joined) {
+            showMessage("Please complete all employee fields.", true);
+            return;
+        }
+        if (employees.some(e => (e.employeeId || "").toLowerCase() === employeeId.toLowerCase() && e.id !== editingId)) {
+            showMessage("This employee ID is already assigned to another employee.", true);
+            return;
+        }
+        if (employees.some(e => (e.email || "").toLowerCase() === email && e.id !== editingId)) {
+            showMessage("An employee with this email already exists.", true);
+            return;
+        }
+        if (teamEmail && employees.some(e => (e.teamEmail || "").toLowerCase() === teamEmail && e.id !== editingId)) {
+            showMessage("This team email is already assigned to another employee.", true);
+            return;
+        }
+
+        if (editingId) {
+            employees = employees.map(e => e.id === editingId ? { ...e, name, employeeId, companyPhone, email, teamEmail, department, role, status, joined } : e);
+            if (!persistEmployees()) return;
+            clearForm();
+            showMessage("Employee record updated.");
+        } else {
+            employees.unshift({ id: "hr-" + Date.now() + "-" + Math.random().toString(36).slice(2,7), name, employeeId, companyPhone, email, teamEmail, department, role, status, joined });
+            if (!persistEmployees()) return;
+            clearForm();
+            showMessage("Employee added successfully.");
+        }
+        render();
+    });
+
+    document.getElementById("hrCancelEditButton").addEventListener("click", clearForm);
+    search.addEventListener("input", render);
+    departmentFilter.addEventListener("change", render);
+    statusFilter.addEventListener("change", render);
+
+    rows.addEventListener("click", event => {
+        const editButton = event.target.closest("[data-edit]");
+        const deleteButton = event.target.closest("[data-delete]");
+        if (editButton) {
+            const employee = employees.find(e => e.id === editButton.dataset.edit);
+            if (!employee) return;
+            editingId = employee.id;
+            document.getElementById("hrEmployeeName").value = employee.name;
+            document.getElementById("hrEmployeeId").value = employee.employeeId || "";
+            document.getElementById("hrCompanyPhone").value = employee.companyPhone || "";
+            document.getElementById("hrEmployeeEmail").value = employee.email;
+            document.getElementById("hrEmployeeTeamEmail").value = employee.teamEmail || "";
+            document.getElementById("hrEmployeeDepartment").value = employee.department;
+            document.getElementById("hrEmployeeRole").value = employee.role;
+            document.getElementById("hrEmployeeStatus").value = employee.status;
+            document.getElementById("hrEmployeeJoined").value = employee.joined || localToday;
+            formTitle.textContent = "Edit Employee";
+            saveButton.textContent = "Save Changes";
+            showMessage("Editing " + employee.name + ".");
+            form.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+        if (deleteButton) {
+            const employee = employees.find(e => e.id === deleteButton.dataset.delete);
+            if (!employee || !confirm(`Delete employee record for ${employee.name}?`)) return;
+            employees = employees.filter(e => e.id !== employee.id);
+            if (!persistEmployees()) return;
+            if (editingId === employee.id) clearForm();
+            render();
+            showMessage("Employee record deleted.");
+        }
+    });
+
+    document.getElementById("hrExportButton").addEventListener("click", () => {
+        const header = ["Name", "Employee ID", "Company Phone Number", "Employee Email", "Team Email", "Department", "Job Title", "Status", "Joining Date"];
+        const csvCell = value => '"' + String(value ?? "").replace(/"/g, '""') + '"';
+        const csv = [header, ...employees.map(e => [e.name, e.employeeId || "", e.companyPhone || "", e.email, e.teamEmail || "", e.department, e.role, e.status, e.joined])]
+            .map(row => row.map(csvCell).join(",")).join("\r\n");
+        const blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8;" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "pro-iq-hr-employees.csv";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+    });
+
+    function money(value) {
+        return new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 2 }).format(Number(value) || 0);
+    }
+
+    function employeeForEmail(email) {
+        const normalized = String(email || "").trim().toLowerCase();
+        return employees.find(e => (e.email || "").toLowerCase() === normalized || (e.teamEmail || "").toLowerCase() === normalized);
+    }
+
+    function renderTransactions() {
+        const matched = transactions.map(t => ({ ...t, employee: employeeForEmail(t.email) })).filter(t => t.employee);
+        const total = matched.reduce((sum, t) => sum + Number(t.amount || 0), 0);
+        const highest = matched.length ? matched.reduce((a, b) => Number(a.amount) >= Number(b.amount) ? a : b) : null;
+        const lowest = matched.length ? matched.reduce((a, b) => Number(a.amount) <= Number(b.amount) ? a : b) : null;
+        document.getElementById("hrTxnCount").textContent = matched.length;
+        document.getElementById("hrTxnTotal").textContent = money(total);
+        document.getElementById("hrTxnHighest").textContent = highest ? money(highest.amount) : "—";
+        document.getElementById("hrTxnHighestLabel").textContent = highest ? `${highest.employee.name} · ${highest.description || highest.email}` : "No matched transactions";
+        document.getElementById("hrTxnLowest").textContent = lowest ? money(lowest.amount) : "—";
+        document.getElementById("hrTxnLowestLabel").textContent = lowest ? `${lowest.employee.name} · ${lowest.description || lowest.email}` : "No matched transactions";
+        transactionRows.innerHTML = matched.slice().sort((a,b) => Number(b.amount) - Number(a.amount)).map(t => `
+            <tr><td>${escapeHTML(t.date || "—")}</td><td>${escapeHTML(t.employee.name)}<br><span class="hr-muted">${escapeHTML(t.employee.department || "")}</span></td><td>${escapeHTML(t.email)}</td><td>${escapeHTML(t.description || t.id || "Transaction")}</td><td><strong>${escapeHTML(money(t.amount))}</strong></td></tr>
+        `).join("");
+        document.getElementById("hrTransactionEmpty").classList.toggle("hidden", matched.length > 0);
+    }
+
+    function parseCSV(text) {
+        const lines = [];
+        let row = [], cell = "", quoted = false;
+        for (let i = 0; i < text.length; i++) {
+            const ch = text[i];
+            if (ch === '"' && quoted && text[i+1] === '"') { cell += '"'; i++; }
+            else if (ch === '"') quoted = !quoted;
+            else if (ch === "," && !quoted) { row.push(cell); cell = ""; }
+            else if ((ch === "\n" || ch === "\r") && !quoted) {
+                if (ch === "\r" && text[i+1] === "\n") i++;
+                row.push(cell); if (row.some(v => v.trim())) lines.push(row);
+                row = []; cell = "";
+            } else cell += ch;
+        }
+        if (cell.length || row.length) { row.push(cell); lines.push(row); }
+        if (lines.length < 2) return [];
+        const keys = lines[0].map(v => v.trim().toLowerCase().replace(/[\s-]+/g, "_").replace(/[^a-z0-9_]/g, ""));
+        const index = names => keys.findIndex(k => names.includes(k));
+        const emailIndex = index(["email", "employee_email", "team_email", "user_email", "owner_email", "email_id"]);
+        const amountIndex = index(["amount", "cost", "transaction_amount", "spend", "total_cost", "value"]);
+        const dateIndex = index(["date", "transaction_date", "timestamp", "created_at"]);
+        const descIndex = index(["description", "service", "transaction", "resource", "name", "transaction_id", "id"]);
+        if (emailIndex < 0 || amountIndex < 0) throw new Error("CSV needs an email column and an amount/cost column.");
+        return lines.slice(1).map((r, i) => {
+            const rawAmount = String(r[amountIndex] || "").replace(/[₹$€£,\s]/g, "");
+            const amount = Number(rawAmount);
+            return { id: String(r[descIndex] || `CSV-${Date.now()}-${i}`), email: String(r[emailIndex] || "").trim().toLowerCase(), amount, date: String(r[dateIndex] || "").trim(), description: String(r[descIndex] || "Transaction").trim() };
+        }).filter(t => t.email && Number.isFinite(t.amount));
+    }
+
+    transactionFile.addEventListener("change", async () => {
+        const file = transactionFile.files && transactionFile.files[0];
+        if (!file) return;
+        try {
+            const imported = parseCSV(await file.text());
+            if (!imported.length) throw new Error("No valid transaction rows found. Check the CSV headers and data.");
+            // Keep prior records and append the imported rows; each import is kept in browser storage.
+            transactions = transactions.concat(imported);
+            if (!persistTransactions()) return;
+            renderTransactions();
+            const matchedCount = imported.filter(t => employeeForEmail(t.email)).length;
+            const unmatchedCount = imported.length - matchedCount;
+            document.getElementById("hrTransactionMessage").textContent = `Imported ${imported.length} rows: ${matchedCount} matched to employees/teams and ${unmatchedCount} unmatched. Add the missing employee/team email IDs, then import again if needed.`;
+        } catch (error) {
+            document.getElementById("hrTransactionMessage").textContent = error.message || "Could not read this CSV file.";
+        } finally { transactionFile.value = ""; }
+    });
+
+    document.getElementById("hrClearTransactions").addEventListener("click", () => {
+        if (!transactions.length) return;
+        if (!confirm("Clear all imported transaction records from this browser?")) return;
+        transactions = [];
+        persistTransactions();
+        renderTransactions();
+        document.getElementById("hrTransactionMessage").textContent = "Transaction records cleared.";
+    });
+
+    renderTransactions();
+    render();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#08111f">
+<title>Who Caused It? | CloudWise</title>
+<style>
+:root{--bg:#08111f;--panel:#101d30;--panel2:#13243a;--line:#24364e;--text:#edf4ff;--muted:#9eb0c8;--cyan:#42d9c8;--blue:#6b9cff;--orange:#ffb454;--red:#ff6d7d;--green:#65e6a8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#14294a 0,transparent 40%),var(--bg);color:var(--text);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit;text-decoration:none}.shell{display:grid;grid-template-columns:248px 1fr;min-height:100vh}.sidebar{padding:26px 17px;border-right:1px solid var(--line);background:rgba(6,15,28,.82);position:sticky;top:0;height:100vh}.brand{display:flex;align-items:center;gap:11px;padding:0 10px 30px;font-size:20px;font-weight:800;letter-spacing:-.6px}.brandmark{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--cyan),var(--blue));display:grid;place-items:center;color:#071523;font-weight:900;box-shadow:0 0 26px #42d9c833}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:1.8px;font-weight:700;margin-top:-3px}.navlabel{padding:8px 12px;color:#71849e;font-size:10px;font-weight:800;letter-spacing:1.7px}.nav{display:grid;gap:7px}.nav a{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;color:#a8bad1;transition:.2s}.nav a:hover,.nav a.active{background:#172b43;color:white}.nav a.active{box-shadow:inset 3px 0 var(--cyan)}.nav .ico{width:20px;text-align:center;font-size:17px}.side-bottom{position:absolute;bottom:20px;left:17px;right:17px;background:#101e30;border:1px solid var(--line);padding:15px;border-radius:15px}.side-bottom strong{display:block;font-size:12px}.side-bottom p{font-size:11px;color:var(--muted);margin:5px 0 12px}.mini-progress{height:5px;background:#26384e;border-radius:20px;overflow:hidden}.mini-progress span{display:block;width:68%;height:100%;background:var(--cyan)}
+main{padding:30px clamp(18px,3vw,42px) 50px;max-width:1600px;width:100%;margin:auto}.topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:28px}.crumb{color:var(--muted);font-size:12px}.crumb b{color:#dce8f7}.top-actions{display:flex;align-items:center;gap:10px}.period{background:#122238;color:#dce8f7;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;font-size:12px}.avatar{width:36px;height:36px;display:grid;place-items:center;border-radius:12px;background:#203a56;color:var(--cyan);font-weight:800}.eyebrow{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}.heading{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:24px}.heading h1{font-size:clamp(27px,3vw,38px);letter-spacing:-1.3px;line-height:1.12;margin:0 0 9px}.heading p{color:var(--muted);margin:0;max-width:680px}.btn{border:0;cursor:pointer;border-radius:10px;padding:11px 15px;font:inherit;font-size:12px;font-weight:800;transition:transform .2s,filter .2s}.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}.btn-primary{background:var(--cyan);color:#062026}.btn-secondary{background:#14263c;color:#dce8f7;border:1px solid var(--line)}
+.grid{display:grid;gap:16px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:17px}.card{background:linear-gradient(145deg,rgba(18,34,55,.96),rgba(13,27,45,.96));border:1px solid var(--line);border-radius:17px;padding:19px;min-width:0;box-shadow:0 12px 35px #00000012;animation:rise .55s both}.stats .card:nth-child(2){animation-delay:.06s}.stats .card:nth-child(3){animation-delay:.12s}.stats .card:nth-child(4){animation-delay:.18s}.stat-head{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:12px}.stat-icon{width:31px;height:31px;border-radius:10px;display:grid;place-items:center;background:#20344a;color:var(--cyan)}.value{font-size:clamp(24px,2.2vw,31px);font-weight:800;letter-spacing:-1px;margin:14px 0 7px}.delta{font-size:11px;color:var(--green)}.delta.warn{color:var(--orange)}.delta.bad{color:var(--red)}.muted{color:var(--muted)}.content-grid{grid-template-columns:minmax(0,1.35fr) minmax(300px,.85fr);margin-bottom:17px}.card-title{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:17px}.card-title h2{font-size:15px;margin:0;letter-spacing:-.2px}.card-title p{font-size:11px;color:var(--muted);margin:4px 0 0}.tag{font-size:10px;font-weight:800;border-radius:7px;padding:5px 8px;background:#20364b;color:var(--cyan);white-space:nowrap}.tag.warn{color:var(--orange);background:#3c2e20}.tag.danger{color:var(--red);background:#3c222e}.action-list{display:grid;gap:12px}.action{display:flex;align-items:flex-start;gap:12px;padding:13px;background:#13253a;border:1px solid #22374e;border-radius:12px}.action-ico{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;flex-shrink:0;background:#3c3020;color:var(--orange)}.action-ico.red{background:#3c222d;color:var(--red)}.action-ico.green{background:#1d3a32;color:var(--green)}.action strong{font-size:12px;display:block}.action p{font-size:11px;color:var(--muted);margin:4px 0 7px}.action small{font-size:10px;color:var(--cyan);font-weight:800}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;white-space:nowrap;font-size:12px}th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#8094ae;font-weight:800;padding:11px 12px;border-bottom:1px solid var(--line)}td{padding:14px 12px;border-bottom:1px solid #203148;color:#dbe6f5}tbody tr:last-child td{border-bottom:0}tbody tr:hover{background:#172b411c}.amount{font-weight:800;font-variant-numeric:tabular-nums}.pill{display:inline-flex;align-items:center;gap:6px;border-radius:7px;padding:5px 8px;font-size:10px;font-weight:800;background:#1e392f;color:var(--green)}.pill.warn{background:#3b3021;color:var(--orange)}.pill.bad{background:#3b222c;color:var(--red)}.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:16px}.filters input,.filters select,.manual-cost,.manual-change{background:#122238;color:#dce8f7;border:1px solid var(--line);border-radius:9px;padding:10px 12px;font:inherit;font-size:12px;outline:none}.filters input{min-width:200px;flex:1}.filters input:focus,.filters select:focus,.manual-cost:focus,.manual-change:focus{border-color:var(--cyan)}.manual-cost,.manual-change{width:130px;max-width:100%;color:#dce8f7;border:1px solid var(--line);border-radius:8px;padding:9px;font:inherit;font-size:12px;outline:none}.meter{height:8px;border-radius:20px;background:#273a50;overflow:hidden;margin-top:10px}.meter span{height:100%;display:block;background:linear-gradient(90deg,var(--cyan),var(--blue));border-radius:20px}.callout{padding:16px;border:1px solid #4a3d2b;background:#2a261e;border-radius:13px;margin-top:15px}.callout strong{font-size:12px;color:var(--orange)}.callout p{font-size:11px;color:#c8bdab;margin:5px 0 0}.footer-note{font-size:10px;color:#71849d;margin-top:20px;text-align:right}@keyframes rise{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:translateY(0)}}@media(max-width:1100px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.content-grid{grid-template-columns:1fr}}@media(max-width:760px){.shell{grid-template-columns:1fr}.sidebar{height:auto;position:relative;padding:15px;border-right:0;border-bottom:1px solid var(--line)}.brand{padding:0 6px 13px}.navlabel,.side-bottom{display:none}.nav{display:flex;overflow:auto;gap:6px}.nav a{white-space:nowrap;padding:9px 11px;font-size:12px}.nav .ico{font-size:14px}.topbar{margin-bottom:22px}main{padding:22px 15px 35px}.heading{align-items:flex-start;flex-direction:column}.heading .btn{width:100%}.stats{gap:10px}.card{padding:15px}.donut-wrap{gap:15px}.insight{align-items:flex-start;flex-direction:column}.insight .big{font-size:23px}}@media(max-width:390px){.stats{grid-template-columns:1fr}.top-actions .period{max-width:120px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="sidebar">
+<a class="brand" href="pro-iq.html"><span class="brandmark">C</span><span>CloudWise<small>CLOUD COST CONTROL</small></span></a>
+<div class="navlabel">WORKSPACE</div>
+<nav class="nav">
+<a class="active" href="who-caused-it.html"><span class="ico">◎</span>Who caused it?</a>
+<a href="cloudwise.html#stop-loss"><span class="ico">⚡</span>Stop the loss</a>
+<a href="cloudwise.html#hidden-expenses"><span class="ico">⌕</span>Hidden expenses</a>
+</nav>
+<div class="side-bottom"><strong>Monthly savings target</strong><p>$9,640 identified of $12,000 goal</p><div class="mini-progress"><span></span></div></div>
+</aside>
+<main>
+<div class="topbar"><div class="crumb"><a href="pro-iq.html">Pro-IQ</a> &nbsp; / &nbsp;<b>Who Caused It?</b></div><div class="top-actions"><select class="period" aria-label="Billing period"><option>October 2026</option><option>September 2026</option><option>August 2026</option></select><div class="avatar" title="Demo workspace">CW</div></div></div>
+<header class="heading"><div><div class="eyebrow">COST OWNERSHIP</div><h1>Who caused it, and why?</h1><p>Trace cloud spend to the team, service, and resource behind the change. Use cost deltas and ownership tags to turn a surprise bill into an actionable explanation.</p></div><button class="btn btn-secondary" data-export>Export report ↓</button></header>
+<div class="grid stats">
+<div class="card"><div class="stat-head">Largest cost increase <span class="stat-icon">↗</span></div><div class="value" data-kpi="largest">+$3,340</div><div class="delta bad" data-kpi-note="largest">Platform Engineering · +24.8%</div></div>
+<div class="card"><div class="stat-head">Spend without owner <span class="stat-icon">◎</span></div><div class="value" data-kpi="unowned">$6,120</div><div class="delta warn" data-kpi-note="unowned">12.7% of total spend</div></div>
+<div class="card"><div class="stat-head">Teams over budget <span class="stat-icon">⚑</span></div><div class="value" data-kpi="overbudget">3 of 8</div><div class="delta bad" data-kpi-note="overbudget">Review budget alerts</div></div>
+<div class="card"><div class="stat-head">Cost anomalies <span class="stat-icon">⌁</span></div><div class="value" data-kpi="anomalies">7</div><div class="delta warn" data-kpi-note="anomalies">2 require urgent review</div></div>
+</div>
+<section class="card" style="margin-bottom:17px">
+  <div class="card-title"><div><h2>Manual data entry</h2><p>Enter your own figures below, then click Apply Manual Values. No values are calculated automatically.</p></div><span class="tag">Manual mode</span></div>
+  <div class="filters">
+    <label style="display:grid;gap:6px;flex:1;min-width:150px;color:var(--muted);font-size:11px">Largest cost increase ($)<input id="manualLargest" type="number" min="0" step="0.01" value="3340"></label>
+    <label style="display:grid;gap:6px;flex:1;min-width:150px;color:var(--muted);font-size:11px">Spend without owner ($)<input id="manualUnowned" type="number" min="0" step="0.01" value="6120"></label>
+    <label style="display:grid;gap:6px;flex:1;min-width:150px;color:var(--muted);font-size:11px">Teams over budget<input id="manualOverbudget" type="number" min="0" step="1" value="3"></label>
+    <label style="display:grid;gap:6px;flex:1;min-width:150px;color:var(--muted);font-size:11px">Cost anomalies<input id="manualAnomalies" type="number" min="0" step="1" value="7"></label>
+  </div>
+  <h3 style="font-size:13px;margin:18px 0 10px">Resource costs and changes</h3>
+  <div class="table-wrap"><table><thead><tr><th>Resource</th><th>Monthly cost ($)</th><th>Change (%)</th></tr></thead><tbody>
+    <tr><td>Platform Engineering — Kubernetes compute</td><td><input class="manual-cost" type="number" min="0" step="0.01" value="11420" aria-label="Kubernetes monthly cost"></td><td><input class="manual-change" type="number" step="0.1" value="28.2" aria-label="Kubernetes cost change"></td></tr>
+    <tr><td>Platform Engineering — Virtual machines</td><td><input class="manual-cost" type="number" min="0" step="0.01" value="5420" aria-label="Virtual machines monthly cost"></td><td><input class="manual-change" type="number" step="0.1" value="18.4" aria-label="Virtual machines cost change"></td></tr>
+    <tr><td>Data &amp; Analytics — Object storage</td><td><input class="manual-cost" type="number" min="0" step="0.01" value="7860" aria-label="Object storage monthly cost"></td><td><input class="manual-change" type="number" step="0.1" value="16.2" aria-label="Object storage cost change"></td></tr>
+    <tr><td>Shared Services — Data transfer</td><td><input class="manual-cost" type="number" min="0" step="0.01" value="4780" aria-label="Data transfer monthly cost"></td><td><input class="manual-change" type="number" step="0.1" value="31.5" aria-label="Data transfer cost change"></td></tr>
+    <tr><td>Unassigned — Block storage</td><td><input class="manual-cost" type="number" min="0" step="0.01" value="2940" aria-label="Block storage monthly cost"></td><td><input class="manual-change" type="number" step="0.1" value="12.7" aria-label="Block storage cost change"></td></tr>
+  </tbody></table></div>
+  <button class="btn btn-primary" id="applyManual" type="button" style="margin-top:15px">Apply Manual Values</button>
+  <span id="manualStatus" class="muted" role="status" style="font-size:11px;margin-left:10px"></span>
+</section>
+<div class="grid content-grid">
+<section class="card"><div class="card-title"><div><h2>Spend change by team</h2><p>Month-over-month increase · illustrative data</p></div><span class="tag danger">Spike detected</span></div>
+<div style="display:grid;gap:18px;margin-top:22px">
+<div><div class="stat-head"><span>Platform Engineering</span><b style="color:var(--red)">+24.8% · +$3,340</b></div><div class="meter"><span style="width:88%;background:linear-gradient(90deg,#ff6d7d,#ffb454)"></span></div></div>
+<div><div class="stat-head"><span>Shared Services</span><b style="color:var(--orange)">+31.5% · +$2,205</b></div><div class="meter"><span style="width:74%;background:linear-gradient(90deg,#ffb454,#e88b5c)"></span></div></div>
+<div><div class="stat-head"><span>Data &amp; Analytics</span><b>+16.2% · +$1,740</b></div><div class="meter"><span style="width:55%"></span></div></div>
+<div><div class="stat-head"><span>App Development</span><b style="color:var(--green)">+4.1% · +$385</b></div><div class="meter"><span style="width:21%"></span></div></div>
+</div>
+<div class="callout"><strong>Possible explanation</strong><p>Higher compute usage, new deployments, or missing ownership tags can cause a team-level spike. Validate against deployment history and resource telemetry before assigning root cause.</p></div>
+</section>
+<section class="card"><div class="card-title"><div><h2>Root-cause signals</h2><p>Signals worth investigating first</p></div><span class="tag">3 signals</span></div>
+<div class="action-list">
+<div class="action"><span class="action-ico red">↗</span><div><strong>Compute usage jumped</strong><p>CPU-heavy instances or Kubernetes node count may have increased.</p><button class="btn btn-secondary" data-action="review">Review signal</button></div></div>
+<div class="action"><span class="action-ico">◉</span><div><strong>Ownership tags missing</strong><p>Some resources cannot be reliably attributed to a team.</p><button class="btn btn-secondary" data-action="review">Review signal</button></div></div>
+<div class="action"><span class="action-ico">⇄</span><div><strong>Shared service charges</strong><p>Network, logging, and platform fees may be pooled centrally.</p><button class="btn btn-secondary" data-action="review">Review signal</button></div></div>
+</div>
+</section>
+</div>
+<section class="card"><div class="card-title"><div><h2>Cost by owner</h2><p>Filter the sample list to locate a team, service, or tag</p></div><button class="btn btn-secondary" data-export>Export CSV ↓</button></div>
+<div class="filters"><input id="resourceSearch" placeholder="Search team, service, or resource…"><select id="environmentFilter"><option value="">All environments</option><option>Production</option><option>Staging</option><option>Development</option><option>Shared</option><option>Unknown</option></select><select id="changeFilter"><option value="">All cost changes</option><option value="increasing">Increasing</option><option value="unallocated">Unallocated</option></select></div>
+<div class="table-wrap"><table id="resourceTable"><thead><tr><th>Team / owner</th><th>Service</th><th>Environment</th><th>Monthly cost</th><th>Change</th><th>Ownership</th></tr></thead><tbody>
+<tr><td>Platform Engineering</td><td>Kubernetes compute</td><td>Production</td><td class="amount">$11,420</td><td><span class="pill bad">+28.2%</span></td><td><span class="pill">Tagged</span></td></tr>
+<tr><td>Platform Engineering</td><td>Virtual machines</td><td>Production</td><td class="amount">$5,420</td><td><span class="pill warn">+18.4%</span></td><td><span class="pill">Tagged</span></td></tr>
+<tr><td>Data &amp; Analytics</td><td>Object storage</td><td>Production</td><td class="amount">$7,860</td><td><span class="pill warn">+16.2%</span></td><td><span class="pill">Tagged</span></td></tr>
+<tr><td>Shared Services</td><td>Data transfer</td><td>Shared</td><td class="amount">$4,780</td><td><span class="pill bad">+31.5%</span></td><td><span class="pill warn">Partial</span></td></tr>
+<tr><td>Unassigned</td><td>Block storage</td><td>Unknown</td><td class="amount">$2,940</td><td><span class="pill warn">+12.7%</span></td><td><span class="pill bad">Missing</span></td></tr>
+</tbody></table></div>
+</section>
+<div class="footer-note">CloudWise demo · Sample values for prototype only · Connect a billing CSV/API to use real costs.</div>
+</main></div>
+<script>
+document.getElementById('applyManual').addEventListener('click',()=>{
+  const number = id => Math.max(0, Number(document.getElementById(id).value) || 0);
+  const money = value => '$' + value.toLocaleString('en-US', {maximumFractionDigits:2});
+  document.querySelector('[data-kpi="largest"]').textContent = '+' + money(number('manualLargest'));
+  document.querySelector('[data-kpi="unowned"]').textContent = money(number('manualUnowned'));
+  document.querySelector('[data-kpi="overbudget"]').textContent = Math.round(number('manualOverbudget')) + ' of 8';
+  document.querySelector('[data-kpi="anomalies"]').textContent = String(Math.round(number('manualAnomalies')));
+  const dataRows = document.querySelectorAll('#resourceTable tbody tr');
+  const costs = document.querySelectorAll('.manual-cost');
+  const changes = document.querySelectorAll('.manual-change');
+  dataRows.forEach((row, i) => {
+    const cost = Math.max(0, Number(costs[i].value) || 0);
+    const changeValue = Number(changes[i].value) || 0;
+    row.cells[3].textContent = money(cost);
+    row.cells[4].textContent = (changeValue > 0 ? '+' : '') + changeValue.toLocaleString('en-US', {maximumFractionDigits:2}) + '%';
+    row.cells[4].className = '';
+    const pill = document.createElement('span');
+    pill.className = 'pill ' + (changeValue >= 20 ? 'bad' : changeValue > 0 ? 'warn' : '');
+    pill.textContent = row.cells[4].textContent;
+    row.cells[4].replaceChildren(pill);
+  });
+  document.getElementById('manualStatus').textContent = 'Manual values applied.';
+  filterRows();
+});
+
+document.querySelectorAll('[data-export]').forEach(btn=>btn.addEventListener('click',()=>{
+  const table=btn.closest('.card')?.querySelector('table') || document.querySelector('table');
+  if(!table){alert('No table data available to export.');return;}
+  const rows=[...table.querySelectorAll('tr')].map(tr=>[...tr.querySelectorAll('th,td')].map(td=>'"'+td.innerText.replaceAll('"','""')+'"').join(','));
+  const blob=new Blob([rows.join('\\n')],{type:'text/csv;charset=utf-8;'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='cloudwise-report.csv';a.click();URL.revokeObjectURL(a.href);
+}));
+document.querySelectorAll('[data-action="review"]').forEach(btn=>btn.addEventListener('click',()=>{
+  alert('Demo action: review the flagged resource with its owner before making changes.');
+}));
+const search=document.getElementById('resourceSearch');
+const env=document.getElementById('environmentFilter');
+const change=document.getElementById('changeFilter');
+function filterRows(){
+  const q=(search.value||'').toLowerCase();
+  const environment=env.value;
+  const changeType=change.value;
+  document.querySelectorAll('#resourceTable tbody tr').forEach(row=>{
+    const text=row.innerText.toLowerCase();
+    const envMatch=!environment || row.cells[2].innerText===environment;
+    const unallocated=row.cells[0].innerText.toLowerCase().includes('unassigned') || row.cells[5].innerText.toLowerCase().includes('missing');
+    const changeMatch=!changeType || (changeType==='unallocated' ? unallocated : row.cells[4].innerText.includes('+'));
+    row.hidden=!(text.includes(q)&&envMatch&&changeMatch);
+  });
+}
+search.addEventListener('input',filterRows);
+env.addEventListener('change',filterRows);
+change.addEventListener('change',filterRows);
+</script>
+</body>
+</html>
